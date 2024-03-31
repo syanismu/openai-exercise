@@ -150,9 +150,9 @@ const response = await openai.chat.completions.create({
 11. **Congratulations! You've made an app with the OpenAI API!**
 
 # Collaborators 
-Jashanpreet Singh - 200513016  
-Shania Muller - 200270187  
-William Linstead  
+**Jashanpreet Singh** - 200513016  
+**Shania Muller** - 200270187  
+**William Linstead** - 200529417  
 
 ## Created for 
 COMP2068  
