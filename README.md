@@ -79,6 +79,8 @@ OPENAI_API_KEY="Your_API_Key_Here"
 npm i dotenv
 ```
 
+*NOTE: To ensure everything works correctly don't forget to do `npm install` to ensure that everything is properly updated
+
 5. **Include dotenv in your index.js file**
 
 ```javascript
