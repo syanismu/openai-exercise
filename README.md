@@ -24,30 +24,30 @@ To create an account, go to https://openai.com/
 
 ## Installing OpenAI
 
-1. Open your desired code editor and create a new project
+1. Open this project in your desired code editor
 
 2. Install the OpenAI Node.js library using your terminal
 ```
 npm install openai
 ```
 
-This will generate a package.json file with the openAI dependency inside, a package-lock.json file and a folder labelled node_modules with required files.
+This will add the openAI dependency.
 
 ## Generate your API Key
 
-2. Log in to your OpenAI account at https://openai.com/
+1. Log in to your OpenAI account at https://openai.com/
 
-3. Select the "API" option
+2. Select the "API" option
 
-4. On the left, there will be a navigation bar that pops open when you hover over it. Select the lock icon labelled "API Keys"
+3. On the left, there will be a navigation bar that pops open when you hover over it. Select the lock icon labelled "API Keys"
 
-5. Click the "+ Create new Secret Key" button to generate a new key
+4. Click the "+ Create new Secret Key" button to generate a new key
 
-6. Name your key and set your permissions. For this we will keep it selected as "All"
+5. Name your key and set your permissions. For this we will keep it selected as "All"
 
-7. Click the "Create secret key" button. 
+6. Click the "Create secret key" button. 
 
-8. Copy and paste the generated key into a safe place as you may only access this key once. 
+7. Copy and paste the generated key into a safe place as you may only access this key once. 
 
 ** Please note that OpenAI is currently not giving out free credits to use their API.   
 ** **Credit card information will be required in order to use the API key.**   
@@ -59,7 +59,7 @@ RateLimitError: 429 You exceeded your current quota, please check your plan and 
 ## Using OpenAI API in Node.js
 
 1. **Initialize the OpenAI client:**
-In your Node.js application, require the `openai` library
+In the index.js file in the routes folder, require the `openai` library
 
 ```javascript
 const OpenAIApi = require("openai");
@@ -73,7 +73,7 @@ const OpenAIApi = require("openai");
 OPENAI_API_KEY="Your_API_Key_Here"
 ```
 
-4. **Install dotenv** to have access to the .env information
+4. Using the terminal, **Install dotenv** to have access to the .env information
 
 ```
 npm i dotenv
@@ -81,7 +81,7 @@ npm i dotenv
 
 *NOTE: To ensure everything works correctly don't forget to do `npm install` to ensure that everything is properly updated
 
-5. **Include dotenv in your index.js file**
+5. **Include dotenv in your index.js file** (Everything will be within the index.js file from here on out)
 
 ```javascript
 require("dotenv").config();
@@ -119,13 +119,19 @@ router.post("/ask", async (req, res) => {
       language = req.body.customLanguage; // Use the custom language instead
     }
 
+    // Step 9 goes here
+
+    // Step 10 goes here
+
   } catch (error) {
     console.log(error.message);
     res.render('index', { title: 'OpenAI API', translation: error.message, selectedLanguage: language }); 
   }
+
+
 ```
 
-9. In the try section under the last if statement, **make a request to the OpenAI API:**
+9. In between the last if statement and the catch section, **make a request to the OpenAI API:**
 
 * To make a request to the OpenAI API, you can use the `openai.chat.completions.create` function as follows:
 ```javascript
