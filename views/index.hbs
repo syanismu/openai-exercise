@@ -12,15 +12,11 @@
           <label for="language" class="form-label">Select a language:</label>
           <div class="custom-select">
             <select id="language" name="language" class="form-select" onchange="checkCustomLanguage(this)">
-              <option value="UK_English_(English_with_loads_of_UK_slangs)" {{#if (eq selectedLanguage "UK_English_(English_with_loads_of_UK_slangs)")}}selected{{/if}}>UK English</option>
-              <option value="High_Valyrian_(Game_of_Thrones_language)" {{#if (eq selectedLanguage "High_Valyrian_(Game_of_Thrones_language)")}}selected{{/if}}>High Valyrian</option>
-              <option value="Royal_English_(1800s_Kings_Fancy_English)" {{#if (eq selectedLanguage "Royal_English_(1800s_Kings_Fancy_English)")}}selected{{/if}}>Royal English</option>
+              <option value="German" {{#if (eq selectedLanguage "German")}}selected{{/if}}>German</option>
               <option value="Spanish" {{#if (eq selectedLanguage "Spanish")}}selected{{/if}}>Spanish</option>
+              <option value="French" {{#if (eq selectedLanguage "French")}}selected{{/if}}>French</option>
               <option value="Japanese_(Everyday_Japanese)" {{#if (eq selectedLanguage "Japanese_(Everyday_Japanese)")}}selected{{/if}}>Everyday Japanese</option>
-              <option value="Minion_(Language_spoken_by_Minions_in_Despicable_Me)" {{#if (eq selectedLanguage "Minion_(Language_spoken_by_Minions_in_Despicable_Me)")}}selected{{/if}}>Minion</option>
-              <option value="Pirate_(Pirate_Speak)" {{#if (eq selectedLanguage "Pirate_(Pirate_Speak)")}}selected{{/if}}>Pirate</option>
-              <option value="Dothraki_(Language_spoken_by_Dothraki_in_Game_of_Thrones)" {{#if (eq selectedLanguage "Dothraki_(Language_spoken_by_Dothraki_in_Game_of_Thrones)")}}selected{{/if}}>Dothraki</option>
-              <option value="Elvish_(Language_spoken_by_Elves_in_Lord_of_the_Rings)" {{#if (eq selectedLanguage "Elvish_(Language_spoken_by_Elves_in_Lord_of_the_Rings)")}}selected{{/if}}>Elvish</option>
+              <option value="Italian" {{#if (eq selectedLanguage "Italian")}}selected{{/if}}>Italian</option>
               <option value="other" {{#if (eq selectedLanguage "other")}}selected{{/if}}>Other</option>
             </select>
           </div>
