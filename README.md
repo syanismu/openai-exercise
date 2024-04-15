@@ -22,15 +22,6 @@ To create an account, go to https://openai.com/
 
 # Instructions
 
-## Installing OpenAI
-
-1. Open this project in your desired code editor
-
-2. Install the OpenAI Node.js library using your terminal
-```
-npm install openai
-```
-
 This will add the openAI dependency.
 
 ## Generate your API Key
@@ -55,7 +46,19 @@ This will add the openAI dependency.
 ```
 RateLimitError: 429 You exceeded your current quota, please check your plan and billing details.
 ```
+## Installing OpenAI
 
+1. Open this project in your desired code editor
+
+2. Install the OpenAI Node.js library using your terminal
+```
+npm install openai
+```
+
+3. Install Nodemon
+```
+npm i nodemon
+```
 ## Using OpenAI API in Node.js
 
 1. **Initialize the OpenAI client:**
@@ -95,19 +98,27 @@ const openai = new OpenAIApi({
 });
 ```
 
-7. **Create the POST method with 2 variables, prompt and languages**
+7. **Create GET method for the page**
+
+```javascript
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'OpenAI API' });
+});
+```
+
+8. **Create the POST method with 2 variables, prompt and languages**
 
 ```javascript
 router.post("/ask", async (req, res) => {
   const prompt = req.body.prompt;
   let language = req.body.language;
 
-  // More added in next step
+  // Step 9 goes here
 });
 
 ```
 
-8. **Within the POST method, add a try... catch**. This will check to see if there is a prompt written and if an "other" language has been selected. It catches any errors and produces an error message
+9. **Within the POST method, add a try... catch**. This will check to see if there is a prompt written and if an "other" language has been selected. It catches any errors and produces an error message
 
 ```javascript
   try {
@@ -119,9 +130,9 @@ router.post("/ask", async (req, res) => {
       language = req.body.customLanguage; // Use the custom language instead
     }
 
-    // Step 9 goes here
-
     // Step 10 goes here
+
+    // Step 11 goes here
 
   } catch (error) {
     console.log(error.message);
@@ -131,7 +142,7 @@ router.post("/ask", async (req, res) => {
 
 ```
 
-9. In between the last if statement and the catch section, **make a request to the OpenAI API:**
+10. In between the last if statement and the catch section, **make a request to the OpenAI API:**
 
 * To make a request to the OpenAI API, you can use the `openai.chat.completions.create` function as follows:
 ```javascript
@@ -148,14 +159,14 @@ const response = await openai.chat.completions.create({
     });
 ```
 
-10. Under that, **provide the translation variable and render the response.**
+11. Under that, **provide the translation variable and render the response.**
 
 ```javascript 
     const translation = response.choices[0].message.content; // saves chatGPT's response
     res.render('index', { title: 'OpenAI API', translation, selectedLanguage: language }); // Renders the response to the page
 ```
 
-11. **Congratulations! You've made an app with the OpenAI API!**
+12. **Congratulations! You've made an app with the OpenAI API!**
 
 # Collaborators 
 **Jashanpreet Singh** - 200513016  
